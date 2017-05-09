@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>信马由缰 - 留言</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="description" content="网站留言">
+    <meta name="keywords" content="留言">
+    <meta name="author" content="冯鹏" />
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="canonical" href="http://pungfen.net/view/comment.html">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <style>
+        .mod-comment{
+            width: 100%;
+            max-width: 960px;
+            line-height: 22px;
+        }
+        .mod-comment .hd{
+            margin: 7px 0 20px;
+            border: 1px solid #fbeed5;
+            padding: 10px 20px;
+            color: #c09853;
+            background-color: #fcf8e3;
+            line-height: 22px;
+            border-radius: 3px;
+        }
+        .mod-comment .btn{
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: #28a745;
+            color: #fff;
+            border: 1px solid rgba(27,31,35,0.2);
+            border-radius: 3px;
+        }
+        .mod-comment .btn:hover{
+            background-color: #269f42;
+        }
+        .mod-comment li{
+            margin-bottom: 12px;
+        }
+        .mod-comment .avatar{
+            float: left;
+        }
+        .mod-comment .content{
+            margin-left: 64px;
+            border: 1px solid #d1d5da;
+            border-radius: 3px;
+        }
+        .mod-comment .c-hd{
+            height: 40px;
+            padding: 0 20px;
+            background-color: #f6f8fa;
+            border-bottom: 1px solid #d1d5da;
+            line-height: 40px;
+            color: #586069;
+            overflow: hidden;
+        }
+        .mod-comment .c-hd .name{
+            font-weight: bold;
+            color: #586069;
+        }
+        .mod-comment .c-hd .reply{
+            float: right;
+        }
+        .mod-comment .time{
+            white-space: nowrap;
+        }
+        .mod-comment .c-bd{
+            padding: 15px;
+        }
+        .mod-comment .c-bd img{
+            display: block;
+            margin: 0 auto;
+        }
+
+        #color-p{
+            background-image:-webkit-gradient( linear, left top,right top,
+            color-stop(0, #00a419),
+            color-stop(0.15, #f44336),
+            color-stop(0.15, #f44336),
+            color-stop(0.29, #ff4300),
+            color-stop(0.3, #AA00FF),
+            color-stop(0.4, #8BC34A),
+            color-stop(0.45, #607D8B),
+            color-stop(0.6, #4096EE),
+            color-stop(0.75, #D50000),
+            color-stop(0.9, #4096EE),
+            color-stop(1, #FF1A00));
+            color:transparent;
+            -webkit-background-clip:text;
+        }
+    </style>
+    <script src="../assets/js/ajax.js"></script>
+    <script>
+        (function(){ //IE低版本兼容
+            var e = ['footer','header','section'],
+                i= e.length;
+            while(i--){
+                document.createElement(e[i]);
+            }
+        })();
+    </script>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <div class="mod-head">
+            <h1><a href="/">PUNG</a></h1>
+            <p id="color-p">我觉得这个世界不是特别好</p>
+        </div>
+        <div class="mod-list">
+            <ul>
+                <li><a href="writing.html">文字</a></li>
+                <li><a href="project.html">项目</a></li>
+                <li><a href="photograph.html">照片</a></li>
+                <li class="active"><a href="comment.html">留言</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div class="main">
+            <div class="mod-comment">
+                <div class="hd">
+                    <p>在Github上与我留言：</p>
+                    <p>
+                        <a class="btn" href="https://github.com/suvenFeng/suvenFeng.github.io/issues/new" target="_blank">发起留言</a>
+                    </p>
+                </div>
+                <div class="bd">
+                    <ul id="comment">
+                        <li><div class="c-bd"><img src="../assets/img/loading.gif" width="32" height="32"/></div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="mod-foot">
+            <p>Copyright &copy; <a href="/">passer-by.com</a></p>
+        </div>
+    </footer>
+</div>
+<script>
+    ajax({
+        'url':'https://api.github.com/repos/suvenFeng/suvenFeng.github.io/issues',
+        'success':function(data){
+            if(data.length){
+                var comments = [];
+                for(var i=0;i<data.length;i++){
+                    var item = data[i];
+                    comments.push('<li>\
+									<div class="avatar">\
+										<a href="'+item.user.html_url+'" target="_blank"><img src="'+item.user.avatar_url+'" width="44" height="44"/></a>\
+									</div>\
+									<div class="content">\
+										<div class="c-hd">\
+											<a class="reply" href="'+item.html_url+'" target="_blank">查看详情</a>\
+											<a class="name" href="'+item.user.html_url+'">'+item.user.login+'</a>\
+											<span class="time">'+(new Date(item.updated_at).toLocaleString())+'</span></div>\
+										<div class="c-bd"><h3 id="title">'+item.title+'</h3><p>'+item.body+'</p></div>\
+									</div>\
+							</li>');
+                }
+                document.getElementById('comment').innerHTML = comments.join('');
+            }
+        }
+    });
+</script>
+</body>
+</html>
