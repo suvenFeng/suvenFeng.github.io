@@ -5,24 +5,61 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
+    <link rel="canonical" href="http://pungfen.com/index.html">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <style>
+        .container{
+            min-height: 400px;
+            background: url('assets/img/background.jpg') center center no-repeat;
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .mod-foot{
+            color:#fff;
+        }
+        .mod-foot a{
+            color:#fff;
+        }
 
+        .mod-content section{
+            margin-bottom: 18px;
+        }
+        .mod-content h3{
+            padding-left: 2px;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        .mod-content ul{
+            overflow: hidden;
+        }
+        .mod-content li{
+            float: left;
+            width: 50%;
+            height: 20px;
+            line-height: 20px;
+            overflow: hidden;
+        }
+        .mod-content a{
+            padding:0 2px;
+        }
+        .mod-content a.hot{
+            color: #cc0000;
+        }
+        .mod-content a:hover{
+            border-bottom: 1px dotted #666;
+        }
+    </style>
     <title>SUVEN-信马由缰</title>
-
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="index.css" rel="stylesheet">
-
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="assets/js/ie-emulation-modes-warning.js"></script>
 
     <script>
         // $(function() {
@@ -36,58 +73,55 @@
         //         }
         //     })
         // })
+        (function(){ //IE低版本兼容
+            var e = ['footer','header','section'],
+                i= e.length;
+            while(i--){
+                document.createElement(e[i]);
+            }
+        })();
     </script>
 
 </head>
 
 <body>
 
-    <div class="site-wrapper">
-
-        <div class="site-wrapper-inner">
-
-            <div class="cover-container">
-
-                <div class="masthead clearfix">
-                    <div class="inner">
-                        <h2 class="masthead-brand">SUVEN</h2>
-                        <nav>
-                            <ul class="nav masthead-nav">
-                                <li><a href="index.html">首页</a></li>
-                                <li><a href="view/blog.html">博客</a></li>
-                                <li><a href="#">关于</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-
-                <div class="inner cover">
-                    <h1 class="cover-heading">信马由缰.</h1>
-                </div>
-
-                <div class="mastfoot">
-                    <div class="inner">
-                        <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@suven</a>.</p>
-                    </div>
-                </div>
-
-            </div>
-
+<div class="wrapper">
+    <header>
+        <div class="mod-head">
+            <h1><a href="/">SUVEN-FEN</a></h1>
+            <p>叩首为梦，码梦为生</p>
         </div>
+        <div class="mod-list">
+            <ul>
+                <li><a href="/project.html">项目</a></li>
+                <li><a href="/writing.html">文字</a></li>
+                <li><a href="/photograph.html">摄影</a></li>
+                <li><a href="/comment.html">留言</a></li>
+                <li><a href="/about.html">关于</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
 
     </div>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="assets/js/jquery.min.js"><\/script>')
-    </script>
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-
+    <footer>
+        <div class="mod-foot">
+            <p>Copyright &copy; <a href="/">pungfen.com</a></p>
+        </div>
+    </footer>
+</div>
+<!--<div style="display: none;">-->
+    <!--<script src="http://s95.cnzz.com/z_stat.php?id=1258310068&web_id=1258310068"></script>-->
+<!--</div>-->
+</div>
+<script>
+    console.log("%c 我觉得这个世界不是特别好-你说呢.",
+        "background-image:-webkit-gradient( linear, left top,right top, color-stop(0, #00a419)," +
+        "color-stop(0.15, #f44336), color-stop(0.29, #ff4300),color-stop(0.3, #AA00FF),color-stop(0.4, #8BC34A), " +
+        "color-stop(0.45, #607D8B),color-stop(0.6, #4096EE), color-stop(0.75, #D50000),color-stop(0.9, #4096EE), " +
+        "color-stop(1, #FF1A00));color:transparent;-webkit-background-clip:text;font-size:13px;");
+  </script>
 </body>
 
 </html>
