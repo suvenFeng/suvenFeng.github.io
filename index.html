@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +12,7 @@
     <link rel="canonical" href="http://pungfen.com/index.html">
 
     <style>
-        .container{
+        .container {
             min-height: 400px;
             background: url('assets/img/background.jpg') center center no-repeat;
             -webkit-filter: grayscale(100%);
@@ -23,43 +24,51 @@
             -o-background-size: cover;
             background-size: cover;
         }
-        .mod-foot{
-            color:#fff;
-        }
-        .mod-foot a{
-            color:#fff;
+
+        .mod-foot {
+            color: #fff;
         }
 
-        .mod-content section{
+        .mod-foot a {
+            color: #fff;
+        }
+
+        .mod-content section {
             margin-bottom: 18px;
         }
-        .mod-content h3{
+
+        .mod-content h3 {
             padding-left: 2px;
             margin-bottom: 5px;
             font-size: 16px;
         }
-        .mod-content ul{
+
+        .mod-content ul {
             overflow: hidden;
         }
-        .mod-content li{
+
+        .mod-content li {
             float: left;
             width: 50%;
             height: 20px;
             line-height: 20px;
             overflow: hidden;
         }
-        .mod-content a{
-            padding:0 2px;
+
+        .mod-content a {
+            padding: 0 2px;
         }
-        .mod-content a.hot{
+
+        .mod-content a.hot {
             color: #cc0000;
         }
-        .mod-content a:hover{
+
+        .mod-content a:hover {
             border-bottom: 1px dotted #666;
         }
 
-        #color-p{
-            background-image:-webkit-gradient( linear, left top,right top,
+        #color-p {
+            background-image: -webkit-gradient( linear, left top, right top,
             color-stop(0, #00a419),
             color-stop(0.15, #f44336),
             color-stop(0.15, #f44336),
@@ -71,17 +80,17 @@
             color-stop(0.75, #D50000),
             color-stop(0.9, #4096EE),
             color-stop(1, #FF1A00));
-            color:transparent;
-            -webkit-background-clip:text;
+            color: transparent;
+            -webkit-background-clip: text;
         }
     </style>
 
 
     <script>
-        (function(){ //IE低版本兼容
-            var e = ['footer','header','section'],
-                i= e.length;
-            while(i--){
+        (function () { //IE低版本兼容
+            var e = ['footer', 'header', 'section'],
+                i = e.length;
+            while (i--) {
                 document.createElement(e[i]);
             }
         })();
@@ -91,38 +100,39 @@
 
 <body>
 
-<div class="wrapper">
-    <header>
-        <div class="mod-head">
-            <h1><a href="/">以梦为马</a></h1>
-            <p id="color-p">我们都是背包客</p>
-        </div>
-        <div class="mod-list">
-            <ul>
-                <li><a href="view/writing.html">文字</a></li>
-                <li><a href="view/project.html">项目</a></li>
-                <li><a href="view/photograph.html">摄影</a></li>
-                <li><a href="view/comment.html">留言</a></li>
-                <li><a href="view/about.html">关于</a></li>
-            </ul>
-        </div>
-    </header>
-    <div class="container">
+    <div class="wrapper">
+        <header>
+            <div class="mod-head">
+                <h1><a href="/">-信马由缰</a></h1>
+                <p id="color-p">我们都是背包客</p>
+            </div>
+            <div class="mod-list">
+                <ul>
+                    <li><a href="view/writing.html">文字</a></li>
+                    <li><a href="view/project.html">项目</a></li>
+                    <li><a href="view/photograph.html">摄影</a></li>
+                    <li><a href="view/comment.html">留言</a></li>
+                    <li><a href="view/about.html">关于</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="container">
 
-    </div>
-    <footer>
-        <div class="mod-foot">
-            <p>Copyright &copy; <a href="/">pungfen.net</a></p>
         </div>
-    </footer>
-</div>
-<script>
-    console.log("%c 我觉得这个世界不是特别好-你说呢.",
-        "background-image:-webkit-gradient( linear, left top,right top, color-stop(0, #00a419)," +
-        "color-stop(0.15, #f44336), color-stop(0.29, #ff4300),color-stop(0.3, #AA00FF),color-stop(0.4, #8BC34A), " +
-        "color-stop(0.45, #607D8B),color-stop(0.6, #4096EE), color-stop(0.75, #D50000),color-stop(0.9, #4096EE), " +
-        "color-stop(1, #FF1A00));color:transparent;-webkit-background-clip:text;font-size:13px;");
-  </script>
+        <footer>
+            <div class="mod-foot">
+                <p>Copyright &copy; <a href="/">pungfen.net</a></p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        console.log("%c 我觉得这个世界不是特别好-你说呢.",
+            "background-image:-webkit-gradient( linear, left top,right top, color-stop(0, #00a419)," +
+            "color-stop(0.15, #f44336), color-stop(0.29, #ff4300),color-stop(0.3, #AA00FF),color-stop(0.4, #8BC34A), " +
+            "color-stop(0.45, #607D8B),color-stop(0.6, #4096EE), color-stop(0.75, #D50000),color-stop(0.9, #4096EE), " +
+            "color-stop(1, #FF1A00));color:transparent;-webkit-background-clip:text;font-size:13px;");
+    </script>
 </body>
+
 </html>
 <link rel="stylesheet" href="assets/css/common.css">
